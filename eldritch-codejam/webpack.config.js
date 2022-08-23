@@ -22,7 +22,7 @@ module.exports = ({ development }) => ({
   // entry: {
   //   main: './src/js/index.js',
   // },
-  entry: './src/index.js',
+  entry: './src/js/index.js',
   output: {
     // clean: true,
     path: path.resolve(__dirname, 'dist'),
@@ -69,7 +69,7 @@ module.exports = ({ development }) => ({
       filename: './css/[name].css'
       // filename: '[name].[contenthash].css'
     }),
-    new CopyPlugin({
+/*    new CopyPlugin({
       patterns: [
         // {from: './public',}
         // { from: './public', to 'dir' },
@@ -77,7 +77,7 @@ module.exports = ({ development }) => ({
         // { from: './src/assets/quotes/*.json', to: './assets/quotes/[name][ext]' },
         // { from: './src/assets/sounds/*.mp3', to: './assets/sounds/[name][ext]' },
       ],
-    }),
+    }),*/
     new CleanWebpackPlugin({ cleanStaleWebpackAssets: false }),
     // ...esLintPlugin(development),
   ],

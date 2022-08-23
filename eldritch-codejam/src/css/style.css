@@ -1,0 +1,156 @@
+body {
+  min-width: 390px;
+  min-height: 100vh;
+  margin: 0 auto;
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  background: center/cover ;
+  background-blend-mode: multiply;
+  transition: background-image 1s ease-in-out;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.wrapper {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  gap: 20px;
+  height: 100vh;
+  justify-content: space-between;
+  width: 100vw;
+}
+
+.ancients-container,
+.difficulty-container,
+.deck-container {
+  width: 30vh;
+}
+
+.ancients-container {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+  min-width: 40%;
+  padding: 20px
+}
+
+.ancients-container .ancient-card {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-sizing: border-box;
+  cursor: pointer;
+  height: 260px;
+  width: 200px;
+  border: 0.6vh solid goldenrod;
+}
+
+.ancients-container .ancient-card.active {
+  /* border: 2px solid red */
+  border: 1vh solid orange;
+}
+
+.difficulty-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: 100vh;
+  justify-content: center
+}
+
+.difficulty-container .difficulty {
+  border: 0.5vh solid gold;
+  box-sizing: border-box;
+  color: gold;
+  cursor: pointer;
+  padding: 5px;
+  text-align: center
+}
+
+.difficulty-container .difficulty.active {
+  /* background-color: red */
+  border: 1vh solid orange;
+}
+
+.deck-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  min-width: 30%
+}
+
+.deck-container .shuffle-button {
+  /* background-color: red; */
+  border: 0.5vh solid goldenrod;
+  color: gold;
+  cursor: pointer;
+  padding: 5px
+}
+
+.deck-container .current-state {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-height: 30%
+}
+
+.deck-container .current-state .stage-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px
+}
+
+.deck-container .current-state .stage-container .stage-text {
+  color: gold
+}
+
+.deck-container .current-state .stage-container .stage-text.done {
+  color: red
+}
+
+.deck-container .current-state .stage-container .dots-container {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  justify-content: center
+}
+
+.deck-container .current-state .stage-container .dot {
+  align-items: center;
+  border-radius: 50%;
+  display: flex;
+  height: 30px;
+  justify-content: center;
+  width: 30px
+}
+
+.deck-container .current-state .stage-container .dot.green {
+  background-color: green
+}
+
+.deck-container .current-state .stage-container .dot.brown {
+  background-color: brown
+}
+
+.deck-container .current-state .stage-container .dot.blue {
+  background-color: blue
+}
+
+.deck-container .deck {
+  cursor: pointer
+}
+
+.deck-container .deck,
+.deck-container .last-card {
+  background-size: cover;
+  height: 190px;
+  width: 130px
+}
