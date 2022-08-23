@@ -22,7 +22,7 @@ module.exports = ({ development }) => ({
   // entry: {
   //   main: './src/js/index.js',
   // },
-  entry: './src/js/index.js',
+  entry: './src/index.js',
   output: {
     // clean: true,
     path: path.resolve(__dirname, 'dist'),
@@ -63,7 +63,7 @@ module.exports = ({ development }) => ({
     new HtmlWebpackPlugin({
       // title: 'Demo webpack'
       template: './src/index.html',
-      favicon: './src/assets/favicon.ico'
+      favicon: './src/favicon.ico'
     }),
     new MiniCssExtractPlugin({
       filename: './css/[name].css'
@@ -74,7 +74,7 @@ module.exports = ({ development }) => ({
         // {from: './public',}
         // { from: './public', to 'dir' },
         // noErrorOnMissing: true,
-        { from: './src/assets/quotes/*.json', to: './assets/quotes/[name][ext]' },
+        // { from: './src/assets/quotes/*.json', to: './assets/quotes/[name][ext]' },
         // { from: './src/assets/sounds/*.mp3', to: './assets/sounds/[name][ext]' },
       ],
     }),
