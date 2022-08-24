@@ -12,26 +12,26 @@
     <div id="root">
       <footer class="footer">
         <div class="ancients-container">
-          <div class="ancient-card"></div>
-          <div class="ancient-card"></div>
-          <div class="ancient-card"></div>
-          <div class="ancient-card"></div>
+          <div class="ancient-card" data-ancient="azathoth"></div>
+          <div class="ancient-card" data-ancient="cthulhu"></div>
+          <div class="ancient-card" data-ancient="iogSothoth"></div>
+          <div class="ancient-card" data-ancient="shubNiggurath"></div>
         </div>
       </footer>
 
       <main class="main">
         <div class="difficulty-container">
-          <div class="difficulty">Очень легкий</div>
-          <div class="difficulty">Легкий</div>
-          <div class="difficulty">Средний</div>
-          <div class="difficulty">Высокий</div>
-          <div class="difficulty">Очень высокий</div>
+          <div class="difficulty" data-difficulty="veryEasy">Очень легкий</div>
+          <div class="difficulty" data-difficulty="easy">Легкий</div>
+          <div class="difficulty" data-difficulty="normal">Средний</div>
+          <div class="difficulty" data-difficulty="hard">Высокий</div>
+          <div class="difficulty" data-difficulty="veryHard">Очень высокий</div>
         </div>
 
         <div class="deck-container">
           <span class="shuffle-button">Замешать колоду</span>
           <div class="current-state">
-            <div class="stage-container">
+            <div class="stage-container" data-stage="1">
               <span class="stage-text">Первая стадия</span>
               <div class="dots-container">
                 <div class="dot green">0</div>
@@ -39,7 +39,7 @@
                 <div class="dot blue">0</div>
               </div>
             </div>
-            <div class="stage-container">
+            <div class="stage-container" data-stage="2">
               <span class="stage-text">Вторая стадия</span>
               <div class="dots-container">
                 <div class="dot green">0</div>
@@ -47,7 +47,7 @@
                 <div class="dot blue">0</div>
               </div>
             </div>
-            <div class="stage-container">
+            <div class="stage-container" data-stage="3">
               <span class="stage-text">Третья стадия</span>
               <div class="dots-container">
                 <div class="dot green">0</div>
@@ -61,7 +61,6 @@
         <div class="card-wrapper">
           <div class="card-back"></div>
           <div class="card-open"></div>
-
         </div>
       </main>
     </div>
