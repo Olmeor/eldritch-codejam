@@ -13,31 +13,29 @@ body {
   overflow: hidden;
 }
 
-.wrapper {
+.footer {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   gap: 20px;
-  height: 100vh;
-  justify-content: space-between;
+  /* height: 100vh; */
+  flex-direction: column;
   width: 100vw;
 }
 
-.ancients-container,
-.difficulty-container,
-.deck-container {
-  width: 30vh;
-  /* max-width: 40vh; */
+.main {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 5vh;
 }
 
 .ancients-container {
   display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
+  /* flex-wrap: wrap; */
   gap: 10px;
-  min-width: 40%;
-  padding: 20px
+  padding: 20px;
+  justify-content: space-around;
 }
 
 .ancients-container .ancient-card {
@@ -46,8 +44,8 @@ body {
   background-size: contain;
   box-sizing: border-box;
   cursor: pointer;
-  height: 260px;
-  width: 200px;
+  width: 250px;
+  height: 324px;
   border: 0.6vh solid goldenrod;
 }
 
@@ -60,8 +58,9 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  height: 100vh;
-  justify-content: center
+  /* height: 100vh; */
+  justify-content: center;
+  width: 25vh;
 }
 
 .difficulty-container .difficulty {
@@ -84,7 +83,8 @@ body {
   flex-direction: column;
   gap: 20px;
   justify-content: center;
-  min-width: 30%
+  /* min-width: 30%; */
+  width: 20vh;
 }
 
 .deck-container .shuffle-button {
@@ -126,11 +126,11 @@ body {
 
 .deck-container .current-state .stage-container .dot {
   align-items: center;
-  border-radius: 50%;
+  border-radius: 5px;
   display: flex;
-  height: 30px;
+  height: 33px;
   justify-content: center;
-  width: 30px
+  width: 40px
 }
 
 .deck-container .current-state .stage-container .dot.green {
@@ -154,4 +154,32 @@ body {
   background-size: cover;
   height: 190px;
   width: 130px
+}
+
+.card-wrapper {
+  width: 60vh;
+  display: flex;
+  justify-content: space-around;
+  /* align-items: center; */
+  /* gap: 5vh */
+}
+
+.card-back {
+  width: 250px;
+  height: 368px;
+  object-fit: cover;
+  cursor: pointer;
+  box-shadow: 0px 5px 27px 19px rgb(0 0 0 / 50%) inset;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+}
+
+.card-open {
+  width: 250px;
+  height: 368px;
+  box-shadow: 0px 5px 27px 19px rgb(0 0 0 / 50%) inset;
+  border-radius: 5px;
+  outline: none;
+  border: none;
 }

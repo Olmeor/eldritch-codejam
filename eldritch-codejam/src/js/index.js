@@ -8,14 +8,6 @@ import difficulties from "../data/difficulties.js"
 import { brownCards, blueCards, greenCards } from "../data/mythicCards/index.js"
 import bg from "../assets/home.jpg";
 
-// console.log(ancients.azathoth);
-console.log(ancientsData)
-console.log(difficulties)
-console.log(brownCards)
-console.log(blueCards)
-console.log(greenCards)
-
-
 function setBackground () {
   const body = document.body;
   body.style.backgroundImage = `url(${bg})`;
