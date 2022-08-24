@@ -52,6 +52,7 @@ body {
 .ancients-container .ancient-card.active {
   /* border: 2px solid red */
   border: 1vh solid orange;
+  transform: scale(1.05);
 }
 
 .difficulty-container {
@@ -128,7 +129,7 @@ body {
   align-items: center;
   border-radius: 5px;
   display: flex;
-  height: 33px;
+  height: 32px;
   justify-content: center;
   width: 40px
 }
@@ -157,28 +158,18 @@ body {
 }
 
 .card-wrapper {
-  width: 60vh;
+  width: 65vh;
   display: flex;
-  justify-content: space-around;
-  /* align-items: center; */
-  /* gap: 5vh */
+  justify-content: space-between;
 }
 
-.card-back {
+.card-back,
+.card-open {
   width: 250px;
   height: 368px;
   object-fit: cover;
   cursor: pointer;
-  box-shadow: 0px 5px 27px 19px rgb(0 0 0 / 50%) inset;
-  border-radius: 5px;
-  outline: none;
-  border: none;
-}
-
-.card-open {
-  width: 250px;
-  height: 368px;
-  box-shadow: 0px 5px 27px 19px rgb(0 0 0 / 50%) inset;
+  box-shadow: 0px 5px 30px 20px rgb(0 0 0 / 50%) inset;
   border-radius: 5px;
   outline: none;
   border: none;

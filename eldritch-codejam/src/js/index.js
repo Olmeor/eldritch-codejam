@@ -7,12 +7,24 @@ import ancientsData from "../data/ancients.js"
 import difficulties from "../data/difficulties.js"
 import { brownCards, blueCards, greenCards } from "../data/mythicCards/index.js"
 import bg from "../assets/home.jpg";
+import cardBack from "../assets/mythicCardBackground.jpg"
 
 function setBackground () {
   const body = document.body;
   body.style.backgroundImage = `url(${bg})`;
 }
 setBackground();
+
+function setCardBack() {
+  const cardBg = document.querySelector('.card-back');
+  cardBg.style.backgroundImage = `url(${cardBack})`;
+}
+setCardBack();
+
+function removeCardBack() {
+  const cardBg = document.querySelector('.card-back');
+  cardBg.style.backgroundImage = '';
+}
 
 function setAncients() {
   const ancientCards = document.querySelector('.ancients-container');
@@ -24,7 +36,6 @@ function setAncients() {
 setAncients();
 
 const ancientCards = document.querySelectorAll('.ancient-card');
-
 function choiceAncient(e) {
   const currentCard = e.currentTarget;
   ancientCards.forEach(card => {
@@ -32,14 +43,11 @@ function choiceAncient(e) {
   });
   currentCard.closest('.ancient-card').classList.add('active');
 }
-
 ancientCards.forEach(card => {
   card.addEventListener('click', choiceAncient);
 });
 
-
 const difficultyLevels = document.querySelectorAll('.difficulty');
-
 function choiceDifficulty(e) {
   const currentDifficulty = e.currentTarget;
 
@@ -48,7 +56,10 @@ function choiceDifficulty(e) {
   });
   currentDifficulty.closest('.difficulty').classList.add('active');
 }
-
 difficultyLevels.forEach(level => {
   level.addEventListener('click', choiceDifficulty);
 });
+
+function getRandomNum(max){
+  return Math.floor((Math.random() * max));
+}
