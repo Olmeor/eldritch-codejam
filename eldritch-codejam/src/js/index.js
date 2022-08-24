@@ -31,46 +31,32 @@ function setAncients() {
 }
 setAncients();
 
-let chosenAncient = 0;
-let isChosen = false;
-function choiceAncient() {
-  const ancientCards = document.querySelectorAll('.ancient-card');
-  for (let i = 0; i < ancientCards.length; i++) {
-    ancientCards[i].addEventListener('click', function() {
-      if (i = chosenAncient && isChosen) {
-        console.log(i, '--')
-        isChosen = true;
-      } else {
-        ancientCards.forEach((card) => {
-          card.classList.remove('active')
-          console.log(card);
-        })
-        ancientCards[i].classList.add('active');
-        chosenAncient= i;
-        isChosen = false;
-      }
-    })
-  }
+const ancientCards = document.querySelectorAll('.ancient-card');
 
-
-  // for (let i = 0; i < playListItem.length; i++) {        
-  //   playListItem[i].addEventListener('click', function() {
-  //     if (i == playNum && isPlay) {
-  //       isPlay = true;
-  //       currentTimeValue = audio.currentTime;
-  //       playAudio();
-  //       addPauseButton();
-  //     } else {
-  //       if (i != playNum) currentTimeValue = 0;
-  //       playListItem.forEach((item) => item.classList.remove('play-item-pause'))
-  //       playListItem[i].classList.add('play-item-pause');
-  //       playNum = i;
-  //       isPlay = false;
-  //       playAudio();
-  //       addPauseButton();
-  //     }
-  //   })
-  // }
+function choiceAncient(e) {
+  const currentCard = e.currentTarget;
+  ancientCards.forEach(card => {
+    card.classList.remove('active');
+  });
+  currentCard.closest('.ancient-card').classList.add('active');
 }
 
-choiceAncient();
+ancientCards.forEach(card => {
+  card.addEventListener('click', choiceAncient);
+});
+
+
+const difficultyLevels = document.querySelectorAll('.difficulty');
+
+function choiceDifficulty(e) {
+  const currentDifficulty = e.currentTarget;
+
+  difficultyLevels.forEach(level=> {
+    level.classList.remove('active');
+  });
+  currentDifficulty.closest('.difficulty').classList.add('active');
+}
+
+difficultyLevels.forEach(level => {
+  level.addEventListener('click', choiceDifficulty);
+});

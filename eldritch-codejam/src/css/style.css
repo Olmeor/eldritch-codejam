@@ -28,6 +28,7 @@ body {
 .difficulty-container,
 .deck-container {
   width: 30vh;
+  /* max-width: 40vh; */
 }
 
 .ancients-container {
