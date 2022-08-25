@@ -32,7 +32,7 @@ function setAncients() {
   ancientCards.children[1].style.backgroundImage = `url(${ancientsList.cthulhu})`;
   ancientCards.children[2].style.backgroundImage = `url(${ancientsList.iogSothoth})`;
   ancientCards.children[3].style.backgroundImage = `url(${ancientsList.shubNiggurath})`;
-  console.log(Object.keys(ancientsList)[0])
+  // console.log(Object.keys(ancientsList)[0])
 }
 setAncients();
 
@@ -89,8 +89,38 @@ difficultyLevels.forEach(level => {
   level.addEventListener('click', choiceDifficulty);
 });
 
-// Замешиваем колоду
+// Выводим колоду
 
 function getRandomNum(max){
   return Math.floor((Math.random() * max));
 }
+
+const button = document.querySelector('.shuffle-button');
+let stages = [];
+
+function createStages() {
+
+  let {firstStage, secondStage, thirdStage} = activeAncient;
+  console.log({firstStage, secondStage, thirdStage})
+  // console.log(activeAncient)
+
+  stages = [
+      [firstStage.greenCards,firstStage.brownCards,firstStage.blueCards],
+      [secondStage.greenCards,secondStage.brownCards,secondStage.blueCards],
+      [thirdStage.greenCards,thirdStage.brownCards,thirdStage.blueCards],
+  ]
+  console.log(stages)
+  setStageCards()
+}
+
+const currentState = document.querySelectorAll('.dots-container');
+
+function setStageCards() {
+    for (let i = 0; i < currentState.length; i++) {
+      currentState[i].querySelector('.green').textContent = stages[i][0];
+      currentState[i].querySelector('.brown').textContent = stages[i][1];
+      currentState[i].querySelector('.blue').textContent = stages[i][2];
+    }
+}
+
+button.addEventListener('click', createStages)
