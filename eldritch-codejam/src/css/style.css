@@ -21,17 +21,17 @@ body {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
-  display: flex;
   gap: 20px;
   flex-direction: column;
   width: 100vw;
+  margin: 0 auto;
 }
 
 .ancients {
   display: flex;
-  /* gap: 10px; */
-  padding: 20px;
+  flex-wrap: wrap;
   justify-content: space-around;
+  padding: 20px;
 }
 
 .ancient-card {
@@ -63,7 +63,6 @@ body {
   display: flex;
   flex-direction: column;
   gap: 20px;
-  /* height: 100vh; */
   justify-content: center;
   width: 30vh;
 }
@@ -78,7 +77,6 @@ body {
   text-align: center
 }
 
-/* .difficulty:hover, */
 .difficulty.active {
   border: 1vh solid orange;
 }
@@ -87,6 +85,11 @@ body {
   display: flex;
   justify-content: space-around;
   margin: 5vh 2vh 0 2vh;
+}
+
+h3 {
+  color: goldenrod;
+  margin-bottom: 1vh;
 }
 
 .button {

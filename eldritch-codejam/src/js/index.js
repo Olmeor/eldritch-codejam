@@ -5,6 +5,16 @@ import Green from '../data/mythicCards/green/index';
 import Blue from '../data/mythicCards/blue/index';
 import Brown from '../data/mythicCards/brown/index';
 
+const ancients = document.querySelector('.ancients');
+const ancientsItem = document.querySelectorAll('.ancient-card');
+const difficulty = document.querySelector('.difficulty-container');
+const difficultyItems = document.querySelectorAll('.difficulty');
+const button = document.querySelector('.button');
+const cards = document.querySelector('.card-wrapper');
+const cardsDeckImg = document.querySelector('.card-back');
+const openCardImg = document.querySelector('.card-open');
+const outputStage = document.querySelectorAll('.stage');
+
 function setAncients() {
   const ancientCards = document.querySelector('.ancients');
   ancientCards.children[0].style.backgroundImage = `url(${ancientsList.azathoth})`;
@@ -13,13 +23,6 @@ function setAncients() {
   ancientCards.children[3].style.backgroundImage = `url(${ancientsList.shubNiggurath})`;
 }
 setAncients();
-
-const ancients = document.querySelector('.ancients');
-const ancientsItem = document.querySelectorAll('.ancient-card');
-const difficulty = document.querySelector('.difficulty-container');
-const difficultyItems = document.querySelectorAll('.difficulty');
-const button = document.querySelector('.button');
-const cards = document.querySelector('.card-wrapper');
 
 ancients.addEventListener('click', function (event) {
   if (event.target.classList.contains('ancient-card')) {
@@ -42,9 +45,6 @@ difficulty.addEventListener('click', function (event) {
     event.target.classList.add('active');
   }
 });
-
-const cardsDeckImg = document.querySelector('.card-back');
-const openCardImg = document.querySelector('.card-open');
 
 button.addEventListener('click', function(event){
   cardsDeckImg.style.display = 'block';
@@ -256,9 +256,11 @@ function fillFinalDeck() {
   for (let card of stages.stage1.cards) {
     finalDeck.push(card);
   }
-}
 
-const outputStage = document.querySelectorAll('.stage');
+  for (let i = finalDeck.length - 1; i >= 0; i--) {
+    console.log(Math.abs(finalDeck.length - i), finalDeck[i].id, finalDeck[i].difficulty);
+  }
+}
 
 function outputDeck() {
   for (let i = 0; i < outputStage.length; i++) {
@@ -275,8 +277,6 @@ button.addEventListener('click', selectDifficulty);
 button.addEventListener('click', fillDeck);
 button.addEventListener('click', outputDeck);
 button.addEventListener('click', fillFinalDeck);
-
-const cardDeckImg = document.querySelector('.card-back');
 
 function getTopCard() {
   let top = finalDeck.pop();
@@ -307,11 +307,11 @@ function deleteCard(elem) {
 }
 
 function showEndCards() {
-  cardDeckImg.style.display = 'none';
+  cardsDeckImg.style.display = 'none';
   button.style.display = 'block';
 }
 
-cardDeckImg.addEventListener('click', function () {
+cardsDeckImg.addEventListener('click', function () {
   showOpenCard();
   outputDeck();
   if (finalDeck.length == 0) {
