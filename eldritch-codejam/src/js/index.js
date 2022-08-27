@@ -140,7 +140,7 @@ function selectCards(
   cardsData,
   colorCards,
   arrayOptions,
-  additionalOption = ''
+  diffOptions = ''
 ) {
   setAmountCard();
   let cardsForSelection = [];
@@ -162,9 +162,9 @@ function selectCards(
   }
 
   let difference = customDeck[colorCards].amount - customDeck[colorCards].cards.length;
-  if (additionalOption !== '' && difference !== 0) {
+  if (diffOptions !== '' && difference !== 0) {
     let moreCards = cardsData.filter(
-      (elem) => elem.difficulty == additionalOption
+      (elem) => elem.difficulty == diffOptions
     );
     for (let i = 0; i < difference; i++) {
       let randomNum = getRandomNum(moreCards.length);
@@ -188,7 +188,7 @@ function discardCard(colorCard, number) {
   customDeck[colorCard].amount--;
 }
 
-function selectCardsForStage(stage) {
+function initStage(stage) {
   for (let i = 0; i < stage.greenNumber; i++) {
     let randomNum = getRandomNum(customDeck.green.amount);
     stage.cards.push(customDeck.green.cards[randomNum]);
@@ -229,9 +229,9 @@ function fillDeck() {
     cards: [],
   };
 
-  selectCardsForStage(stages.stage1);
-  selectCardsForStage(stages.stage2);
-  selectCardsForStage(stages.stage3);
+  initStage(stages.stage1);
+  initStage(stages.stage2);
+  initStage(stages.stage3);
 }
 
 let finalDeck = [];
@@ -265,21 +265,6 @@ function outputDeck() {
   }
 }
 
-function initDeck() {
-  if (!(!activeAncient || !activeLevel)) { //check undefined
-    cardsDeckImg.style.display = 'block';
-    // openCardImg.style.display = 'none';
-    cards.style.display = 'block';
-    button.style.display = 'none';
-    selectDifficulty();
-    fillDeck();
-    outputDeck();
-    fillFinalDeck();
-  }
-}
-
-button.addEventListener('click', initDeck);
-
 function getTopCard() {
   let topCard = finalDeck.pop();
   deleteCard(topCard);
@@ -312,6 +297,21 @@ function showEndCards() {
   cardsDeckImg.style.display = 'none';
   button.style.display = 'block';
 }
+
+function initDeck() {
+  if (!(!activeAncient || !activeLevel)) { //check undefined
+    cardsDeckImg.style.display = 'block';
+    // openCardImg.style.display = 'none';
+    cards.style.display = 'block';
+    button.style.display = 'none';
+    selectDifficulty();
+    fillDeck();
+    outputDeck();
+    fillFinalDeck();
+  }
+}
+
+button.addEventListener('click', initDeck);
 
 cardsDeckImg.addEventListener('click', function () {
   showOpenCard();
