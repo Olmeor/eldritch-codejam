@@ -46,13 +46,6 @@ difficulty.addEventListener('click', function (event) {
   }
 });
 
-button.addEventListener('click', function(event){
-  cardsDeckImg.style.display = 'block';
-  // openCardImg.style.display = 'none';
-  cards.style.display = 'block';
-  button.style.display = 'none';
-})
-
 let activeAncient;
 let activeLevel;
 let customDeck = {
@@ -70,10 +63,11 @@ let customDeck = {
   },
 };
 
-
-function getRandomNum(max) {
-  return Math.floor(Math.random() * max);
-}
+let stages = {
+  stage1: {},
+  stage2: {},
+  stage3: {},
+};
 
 function setActiveAncient() {
   let activeItem = ancients.querySelector('.ancient-card.active').dataset.ancient;
@@ -138,6 +132,10 @@ function setAmountCard() {
     activeAncient.thirdStage.blueCards;
 }
 
+function getRandomNum(max) {
+  return Math.floor(Math.random() * max);
+}
+
 function selectCards(
   cardsData,
   colorCards,
@@ -189,12 +187,6 @@ function discardCard(colorCard, number) {
   customDeck[colorCard].cards.splice(number, 1);
   customDeck[colorCard].amount--;
 }
-
-let stages = {
-  stage1: {},
-  stage2: {},
-  stage3: {},
-};
 
 function selectCardsForStage(stage) {
   for (let i = 0; i < stage.greenNumber; i++) {
@@ -273,22 +265,32 @@ function outputDeck() {
   }
 }
 
-button.addEventListener('click', selectDifficulty);
-button.addEventListener('click', fillDeck);
-button.addEventListener('click', outputDeck);
-button.addEventListener('click', fillFinalDeck);
+function initDeck() {
+  if (!(!activeAncient || !activeLevel)) { //check undefined
+    cardsDeckImg.style.display = 'block';
+    // openCardImg.style.display = 'none';
+    cards.style.display = 'block';
+    button.style.display = 'none';
+    selectDifficulty();
+    fillDeck();
+    outputDeck();
+    fillFinalDeck();
+  }
+}
+
+button.addEventListener('click', initDeck);
 
 function getTopCard() {
-  let top = finalDeck.pop();
-  deleteCard(top);
+  let topCard = finalDeck.pop();
+  deleteCard(topCard);
 
-  return top;
+  return topCard;
 }
 
 function showOpenCard() {
   if (finalDeck.length !== 0) {
-    let top = getTopCard();
-    openCardImg.style.backgroundImage = `url(${top.cardFace})`;
+    let topCard = getTopCard();
+    openCardImg.style.backgroundImage = `url(${topCard.cardFace})`;
     openCardImg.onload = function () {
       openCardImg.style.display = 'block';
     };
