@@ -1,69 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- <link href="./favicon.png" rel="shortcut icon" /> -->
-    <!-- <link rel="stylesheet" href="./css/style.css" /> -->
+    <!-- <link rel="stylesheet" href="css/style.css" /> -->
+
     <title>Eldritch Horror</title>
   </head>
   <body>
-    <div id="root">
-      <footer class="footer">
-        <div class="ancients-container">
-          <div class="ancient-card" data-ancient="azathoth"></div>
-          <div class="ancient-card" data-ancient="cthulhu"></div>
-          <div class="ancient-card" data-ancient="iogSothoth"></div>
-          <div class="ancient-card" data-ancient="shubNiggurath"></div>
-        </div>
-      </footer>
+    <header class="header">
+      <div class="ancients">
+        <div class="ancient-card" data-ancient="azathoth"></div>
+        <div class="ancient-card" data-ancient="cthulhu"></div>
+        <div class="ancient-card" data-ancient="iogSothoth"></div>
+        <div class="ancient-card" data-ancient="shubNiggurath"></div>
+      </div>
+    </header>
 
-      <main class="main">
-        <div class="difficulty-container">
-          <div class="difficulty" data-difficulty="veryEasy">Очень легкий</div>
-          <div class="difficulty" data-difficulty="easy">Легкий</div>
-          <div class="difficulty" data-difficulty="normal">Средний</div>
-          <div class="difficulty" data-difficulty="hard">Высокий</div>
-          <div class="difficulty" data-difficulty="veryHard">Очень высокий</div>
-        </div>
+    <main class="main">
+      <div class="difficulty-container">
+        <div class="difficulty" data-level="very easy">Очень легкий</div>
+        <div class="difficulty" data-level="easy">Легкий уровень</div>
+        <div class="difficulty" data-level="normal">Средний уровень</div>
+        <div class="difficulty" data-level="hard">Сложный уровень</div>
+        <div class="difficulty" data-level="very hard">Очень сложный</div>
+      </div>
 
-        <div class="deck-container">
-          <span class="shuffle-button">Замешать колоду</span>
-          <div class="current-state">
-            <div class="stage-container" data-stage="1">
-              <span class="stage-text">Первая стадия</span>
-              <div class="dots-container">
-                <div class="dot green">0</div>
-                <div class="dot brown">0</div>
-                <div class="dot blue">0</div>
-              </div>
+      <div class="deck-container">
+        <div class="shuffle-button">
+          <button class="button">Замешать колоду</button>
+        </div>
+        <div class="stages">
+          <div class="stage-container stage" data-stage="1">
+            <span class="stage-text">Первая стадия:</span>
+            <div class="dots-container">
+              <div class="dot green">0</div>
+              <div class="dot brown">0</div>
+              <div class="dot blue">0</div>
             </div>
-            <div class="stage-container" data-stage="2">
-              <span class="stage-text">Вторая стадия</span>
-              <div class="dots-container">
-                <div class="dot green">0</div>
-                <div class="dot brown">0</div>
-                <div class="dot blue">0</div>
-              </div>
+          </div>
+          <div class="stage-container stage" data-stage="2">
+            <span class="stage-text">Вторая стадия:</span>
+            <div class="dots-container">
+              <div class="dot green">0</div>
+              <div class="dot brown">0</div>
+              <div class="dot blue">0</div>
             </div>
-            <div class="stage-container" data-stage="3">
-              <span class="stage-text">Третья стадия</span>
-              <div class="dots-container">
-                <div class="dot green">0</div>
-                <div class="dot brown">0</div>
-                <div class="dot blue">0</div>
-              </div>
+          </div>
+          <div class="stage-container stage" data-stage="3">
+            <span class="stage-text">Третья стадия:</span>
+            <div class="dots-container">
+              <div class="dot green">0</div>
+              <div class="dot brown">0</div>
+              <div class="dot blue">0</div>
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="card-wrapper">
+      <div class="card-wrapper">
+        <div class="cards">
           <div class="card-back"></div>
-          <div class="card-open"></div>
+          <div class="card-open">
+          </div>
         </div>
-      </main>
-    </div>
-    <!-- <script defer type="module" src="./js/index.js"></script> -->
+      </div>
+    </main>
+    <!-- <script src="js/index.js" type="module"></script> -->
   </body>
 </html>

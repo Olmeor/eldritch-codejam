@@ -1,44 +1,40 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-  min-width: 390px;
-  min-height: 100vh;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-width: 500px;
   font-family: 'Arial', sans-serif;
   font-size: 24px;
   color: #fff;
   text-align: center;
-  background: center/cover ;
-  background-blend-mode: multiply;
-  transition: background-image 1s ease-in-out;
-  background-size: cover;
-  overflow: hidden;
+  background: url("../assets/home.jpg") center/cover;
+  height: 100vh;
 }
 
-.footer {
+.header {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   gap: 20px;
-  /* height: 100vh; */
   flex-direction: column;
   width: 100vw;
 }
 
-.main {
+.ancients {
   display: flex;
-  justify-content: space-around;
-  margin-top: 5vh;
-}
-
-.ancients-container {
-  display: flex;
-  /* flex-wrap: wrap; */
-  gap: 10px;
+  /* gap: 10px; */
   padding: 20px;
   justify-content: space-around;
 }
 
-.ancients-container .ancient-card {
+.ancient-card {
   background-position: 50%;
   background-repeat: no-repeat;
   background-size: contain;
@@ -46,13 +42,21 @@ body {
   cursor: pointer;
   width: 250px;
   height: 324px;
-  border: 0.6vh solid goldenrod;
+  border: 0.6vh solid gold;
+  border-radius: 15px;
 }
 
-.ancients-container .ancient-card.active {
-  /* border: 2px solid red */
+.ancient-card:hover {
+  transform: scale(1.1);
+  z-index: 40;
+  transition: 0.3s;
+}
+
+.ancient-card.active{
   border: 1vh solid orange;
-  transform: scale(1.05);
+  transform: scale(1.1);
+  transition: 0.3s;
+  border-radius: 15px;
 }
 
 .difficulty-container {
@@ -61,11 +65,12 @@ body {
   gap: 20px;
   /* height: 100vh; */
   justify-content: center;
-  width: 25vh;
+  width: 30vh;
 }
 
-.difficulty-container .difficulty {
+.difficulty {
   border: 0.5vh solid gold;
+  border-radius: 10px;
   box-sizing: border-box;
   color: gold;
   cursor: pointer;
@@ -73,9 +78,61 @@ body {
   text-align: center
 }
 
-.difficulty-container .difficulty.active {
-  /* background-color: red */
+/* .difficulty:hover, */
+.difficulty.active {
   border: 1vh solid orange;
+}
+
+.main {
+  display: flex;
+  justify-content: space-around;
+  margin: 5vh 2vh 0 2vh;
+}
+
+.button {
+  border: 0.5vh solid goldenrod;
+  border-radius: 10px;
+  color: gold;
+  cursor: pointer;
+  padding: 5px;
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  text-align: center;
+  background: transparent;
+}
+
+.button:hover {
+  background-color: rgb(255, 215, 0, 0.2);
+}
+
+.button:active {
+  transform: translate(5px, 5px);
+}
+
+.card-wrapper {
+  align-items: center;
+  display: flex;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5vh;
+}
+
+.card-back {
+  background-image: url('../assets/mythicCardBackground.jpg');
+}
+
+.card-open,
+.card-back {
+  width: 200px;
+  height: 300px;
+  box-shadow: 0px 5px 30px 20px rgba(0, 0, 0, 0.5) inset;
+  border-radius: 10px;
+  outline: none;
+  border: none;
 }
 
 .deck-container {
@@ -84,48 +141,37 @@ body {
   flex-direction: column;
   gap: 20px;
   justify-content: center;
-  /* min-width: 30%; */
   width: 20vh;
 }
 
-.deck-container .shuffle-button {
-  /* background-color: red; */
-  border: 0.5vh solid goldenrod;
-  color: gold;
-  cursor: pointer;
-  padding: 5px
-}
-
-.deck-container .current-state {
+.stages {
+  align-items: center;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  min-height: 30%
+  gap: 20px;
+  justify-content: center;
+  width: 25vh;
 }
 
-.deck-container .current-state .stage-container {
+.stage {
   align-items: center;
   display: flex;
   flex-direction: column;
   gap: 5px
 }
 
-.deck-container .current-state .stage-container .stage-text {
-  color: gold
+.stage-text {
+  color: gold;
 }
 
-.deck-container .current-state .stage-container .stage-text.done {
-  color: red
-}
-
-.deck-container .current-state .stage-container .dots-container {
+.dots-container {
   align-items: center;
   display: flex;
   gap: 20px;
   justify-content: center
 }
 
-.deck-container .current-state .stage-container .dot {
+.dot {
   align-items: center;
   border-radius: 5px;
   display: flex;
@@ -134,43 +180,51 @@ body {
   width: 40px
 }
 
-.deck-container .current-state .stage-container .dot.green {
-  background-color: green
+.green {
+  background-color: green;
 }
 
-.deck-container .current-state .stage-container .dot.brown {
-  background-color: brown
+.brown {
+  background-color: brown;
 }
 
-.deck-container .current-state .stage-container .dot.blue {
-  background-color: blue
+.blue {
+  background-color: blue;
 }
 
-.deck-container .deck {
-  cursor: pointer
+@media(max-width: 1280px) {
+
+  .difficulty-container {
+    width: 20vh;
+  }
+
+  .cards {
+    gap: 2vh
+  }
+
+  .ancient-card {
+    width: 200px;
+    height: 259px;
+  }
+
+  .shuffle-button {
+    width: 15vh;
+  }
 }
 
-.deck-container .deck,
-.deck-container .last-card {
-  background-size: cover;
-  height: 190px;
-  width: 130px
-}
+@media(max-width: 980px) {
 
-.card-wrapper {
-  width: 65vh;
-  display: flex;
-  justify-content: space-between;
-}
+  .difficulty-container {
+    width: 10vh;
+  }
 
-.card-back,
-.card-open {
-  width: 250px;
-  height: 368px;
-  object-fit: cover;
-  cursor: pointer;
-  box-shadow: 0px 5px 30px 20px rgb(0 0 0 / 50%) inset;
-  border-radius: 5px;
-  outline: none;
-  border: none;
+  .ancient-card {
+    width: 150px;
+    height: 194px;
+  }
+
+  .button,
+  .difficulty {
+    font-size: 20px;
+  }
 }
