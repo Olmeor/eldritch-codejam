@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  min-width: 500px;
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  color: #fff;
+  text-align: center;
+  background: url(../assets/835c58f1f850fcfc430e.jpg) center/cover;
+  height: 100vh;
+}
+
+.header {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  gap: 20px;
+  flex-direction: column;
+  width: 100vw;
+  margin: 0 auto;
+}
+
+.ancients {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.ancient-card {
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: contain;
+  box-sizing: border-box;
+  cursor: pointer;
+  width: 250px;
+  height: 324px;
+  border: 0.6vh solid gold;
+  border-radius: 15px;
+}
+
+.ancient-card:hover {
+  transform: scale(1.1);
+  z-index: 40;
+  transition: 0.3s;
+}
+
+.ancient-card.active{
+  border: 1vh solid orange;
+  transform: scale(1.1);
+  transition: 0.3s;
+  border-radius: 15px;
+}
+
+.difficulty-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  width: 30vh;
+}
+
+.difficulty {
+  border: 0.5vh solid gold;
+  border-radius: 10px;
+  box-sizing: border-box;
+  color: gold;
+  cursor: pointer;
+  padding: 5px;
+  text-align: center
+}
+
+.difficulty.active {
+  border: 1vh solid orange;
+}
+
+.main {
+  display: flex;
+  justify-content: space-around;
+  margin: 5vh 2vh 0 2vh;
+}
+
+h3 {
+  color: goldenrod;
+  margin-bottom: 1vh;
+}
+
+.button {
+  border: 0.5vh solid goldenrod;
+  border-radius: 10px;
+  color: gold;
+  cursor: pointer;
+  padding: 5px;
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  text-align: center;
+  background: transparent;
+}
+
+.button:hover {
+  background-color: rgb(255, 215, 0, 0.2);
+}
+
+.button:active {
+  transform: translate(5px, 5px);
+}
+
+.card-wrapper {
+  align-items: center;
+  display: flex;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 5vh;
+}
+
+.card-back {
+  background-image: url(../assets/9b452e524071054c0879.jpg);
+}
+
+.card-open,
+.card-back {
+  width: 200px;
+  height: 300px;
+  box-shadow: 0px 5px 30px 20px rgba(0, 0, 0, 0.5) inset;
+  border-radius: 10px;
+  outline: none;
+  border: none;
+}
+
+.deck-container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  width: 20vh;
+}
+
+.stages {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  justify-content: center;
+  width: 25vh;
+}
+
+.stage {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 5px
+}
+
+.stage-text {
+  color: gold;
+}
+
+.dots-container {
+  align-items: center;
+  display: flex;
+  gap: 20px;
+  justify-content: center
+}
+
+.dot {
+  align-items: center;
+  border-radius: 5px;
+  display: flex;
+  height: 32px;
+  justify-content: center;
+  width: 40px
+}
+
+.green {
+  background-color: green;
+}
+
+.brown {
+  background-color: brown;
+}
+
+.blue {
+  background-color: blue;
+}
+
+@media(max-width: 1280px) {
+
+  .difficulty-container {
+    width: 20vh;
+  }
+
+  .cards {
+    gap: 2vh
+  }
+
+  .ancient-card {
+    width: 200px;
+    height: 259px;
+  }
+
+  .shuffle-button {
+    width: 15vh;
+  }
+}
+
+@media(max-width: 980px) {
+
+  .difficulty-container {
+    width: 10vh;
+  }
+
+  .ancient-card {
+    width: 150px;
+    height: 194px;
+  }
+
+  .button,
+  .difficulty {
+    font-size: 20px;
+  }
+}
+
