@@ -1,2 +1,3 @@
 ## Eldritch Horror Codejam
-https://rolling-scopes-school.github.io/olmeor-JSFEPRESCHOOL2022Q2/eldritch-codejam/
+**RSSchool Task**
+https://olmeor.github.io/eldritch-codejam/
